@@ -1091,7 +1091,7 @@
 
     if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 	    // module.exports = WebMWriter(require("./ArrayBufferDataStream"), require("./BlobBuffer"));
-      module.exports = WebMWriter(ArrayBufferDataStream,BlobBuffer);
+      module.exports = WebMWriter(window.ArrayBufferDataStream,BlobBuffer);
     } else {
 	    window.WebMWriter = WebMWriter(window.ArrayBufferDataStream, BlobBuffer);
     }
