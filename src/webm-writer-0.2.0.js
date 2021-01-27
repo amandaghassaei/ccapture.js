@@ -1093,6 +1093,6 @@
 	    // module.exports = WebMWriter(require("./ArrayBufferDataStream"), require("./BlobBuffer"));
       module.exports = WebMWriter(ArrayBufferDataStream,BlobBuffer);
     } else {
-	    window.WebMWriter = window.WebMWriter(ArrayBufferDataStream, BlobBuffer);
+	    window.WebMWriter = WebMWriter(window.ArrayBufferDataStream, BlobBuffer);
     }
 })();
