@@ -8,7 +8,7 @@
 
 "use strict";
 
-(function(){
+// (function(){
     /*
      * Create an ArrayBuffer of the given length and present it as a writable stream with methods
      * for writing data in different formats.
@@ -201,12 +201,12 @@
         }
     };
 
-	if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-		module.exports = ArrayBufferDataStream;
-	} else {
-		window.ArrayBufferDataStream = ArrayBufferDataStream;
-	}
-}());"use strict";
+// 	if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+// 		module.exports = ArrayBufferDataStream;
+// 	} else {
+// 		window.ArrayBufferDataStream = ArrayBufferDataStream;
+// 	}
+// }());"use strict";
 
 /**
  * Allows a series of Blob-convertible objects (ArrayBuffer, Blob, String, etc) to be added to a buffer. Seeking and
@@ -219,7 +219,7 @@
  *
  * Released under the WTFPLv2 https://en.wikipedia.org/wiki/WTFPL
  */
-(function() {
+// (function() {
 	var BlobBuffer = function(fs) {
 		return function(destination) {
 			var
@@ -427,12 +427,13 @@
 		};
 	};
 
-	if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-		module.exports = BlobBuffer(require('fs'));
-	} else {
-		window.BlobBuffer = BlobBuffer(null);
-	}
-})();/**
+// 	if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+// 		module.exports = BlobBuffer(require('fs'));
+// 	} else {
+// 		window.BlobBuffer = BlobBuffer(null);
+// 	}
+// })();
+/**
  * WebM video encoder for Google Chrome. This implementation is suitable for creating very large video files, because
  * it can stream Blobs directly to a FileWriter without buffering the entire video in memory.
  *
@@ -1091,8 +1092,8 @@
 
     if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 	    // module.exports = WebMWriter(require("./ArrayBufferDataStream"), require("./BlobBuffer"));
-      module.exports = WebMWriter(window.ArrayBufferDataStream,BlobBuffer);
+      module.exports = WebMWriter(ArrayBufferDataStream,BlobBuffer);
     } else {
-	    window.WebMWriter = WebMWriter(window.ArrayBufferDataStream, BlobBuffer);
+	    window.WebMWriter = WebMWriter(ArrayBufferDataStream, BlobBuffer);
     }
 })();
