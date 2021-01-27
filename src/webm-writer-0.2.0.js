@@ -425,7 +425,7 @@
 				return writePromise;
 			};
 		};
-	};
+	}(null);
 
 // 	if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 // 		module.exports = BlobBuffer(require('fs'));
