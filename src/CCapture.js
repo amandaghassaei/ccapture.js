@@ -5,6 +5,7 @@ if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   var download = require('./download.js');
   var GIF = require('./gif.js');
   var WebMWriter = require('./webm-writer-0.2.0');
+  var gifWorker = require('./gif.worker.js'); // import this so that it gets packaged with the rest of the code.
 }
 
 "use strict";
@@ -506,7 +507,8 @@ function CCGIFEncoder( settings ) {
 	CCFrameEncoder.call( this, settings );
 
 	settings.quality = 31 - ( ( settings.quality * 30 / 100 ) || 10 );
-	settings.workers = settings.workers || 4;
+	settings.
+	s = settings.workers || 4;
 
 	this.extension = '.gif'
 	this.mimeType = 'image/gif'
@@ -518,7 +520,7 @@ function CCGIFEncoder( settings ) {
   	this.encoder = new GIF({
 		workers: settings.workers,
 		quality: settings.quality,
-		workerScript: settings.workersPath + 'gif.worker.js'
+		workerScript: 'gif.worker.js'
 	} );
 
     this.encoder.on( 'progress', function( progress ) {
